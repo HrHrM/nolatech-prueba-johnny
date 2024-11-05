@@ -48,7 +48,7 @@ MONGO_URI=mongodb://localhost:27017/employee-evaluation
 JWT_SECRET=tu_jwt_secreto
 ```
 
-Para fines de las pruebas, estas son las credenciales
+Para fines de las pruebas, estas son las credenciales, normalmente no se aplicarian publicas en un servidor, estas son solo para motivos de prueba y normalmente no se deberian ver
 
 ```bash
 MONGO_URI=mongodb+srv://johnny130205:1130205Jb@backend-nltcj-johnny.de6pi.mongodb.net/backend-nltcj-johnny
