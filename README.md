@@ -43,7 +43,7 @@ npm install
 Crea un archivo `.env` en la raíz de la carpeta del backend con el siguiente contenido:
 
 ```bash
-PORT=3001
+PORT=5000
 MONGO_URI=mongodb://localhost:27017/employee-evaluation
 JWT_SECRET=tu_jwt_secreto
 ```
@@ -98,7 +98,7 @@ pm2 stop server.js
 
 ```
 
-El servidor se iniciará en `http://localhost:3001`.
+El servidor se iniciará en `http://localhost:5000`.
 
 ### 2. Iniciar el Frontend
 
