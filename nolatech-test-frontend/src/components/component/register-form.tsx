@@ -12,15 +12,24 @@ import { RegisterFormData, registerSchema } from "@/utils/schemas";
 import { Input } from "../ui/input";
 import { HiUser, HiLockClosed } from "react-icons/hi";
 import { registerUser } from "@/services/authService";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 function RegisterForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
   });
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +37,7 @@ function RegisterForm() {
   const signup = async (data: RegisterFormData) => {
     setIsLoading(true);
     try {
+      console.log(data);
       const responseData = await registerUser(data);
       toast.success("Registration Successful");
 
@@ -50,7 +60,7 @@ function RegisterForm() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm opacity-20"
         style={{ backgroundImage: `url(${purpleoffice})` }}
       ></div>
-      
+
       {/* Overlay with a blue-purple effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 opacity-30"></div>
 
@@ -107,6 +117,28 @@ function RegisterForm() {
                 </div>
               </div>
 
+              <div className="relative">
+                <Label htmlFor="password">Role</Label>
+                <div className="flex items-center border rounded-md overflow-hidden shadow-sm">
+                  <HiLockClosed className="text-gray-500 mx-2" />
+                  <Select
+                    onValueChange={(value: any) => setValue("role", value)}
+                    defaultValue="Employee"
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select a role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Admin">Admin</SelectItem>
+                      <SelectItem value="Manager">Manager</SelectItem>
+                      <SelectItem value="Employee">Employee</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {errors.role && (
+                    <p className="text-red-500">{errors.role.message}</p>
+                  )}{" "}
+                </div>
+              </div>
               <button
                 type="submit"
                 className="w-full py-3 mt-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-purple-700 hover:to-indigo-700 transition transform hover:-translate-y-1 focus:ring-4 focus:ring-purple-500"
