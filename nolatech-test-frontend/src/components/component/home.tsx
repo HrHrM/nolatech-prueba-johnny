@@ -36,7 +36,7 @@ export function Home() {
   const [sortColumn, setSortColumn] = useState("username"); // Orden de columna por nombre
   const [sortDirection, setSortDirection] = useState("asc"); // Tipo de orden ascendente o descendente
   const [filterText, setFilterText] = useState(""); // Filtro de texto
-  const [currentPage, setCurrentPage] = useState<any>(1); // Paginado de los empleados
+  const [currentPage, setCurrentPage] = useState<any>(1);
   const [itemsPerPage] = useState<any>(10); // Empleados por pagina
   const [loading, setLoading] = useState(true); // Cargando
   const [isModalOpen, setIsModalOpen] = useState(false); // Mostrar modal

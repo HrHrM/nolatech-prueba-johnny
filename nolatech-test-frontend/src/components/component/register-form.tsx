@@ -66,7 +66,7 @@ function RegisterForm() {
 
       {/* Main content */}
       <div className="relative z-10 p-6 backdrop-blur-md w-full max-w-lg">
-        <Card className="shadow-xl rounded-2xl overflow-hidden">
+        <Card className="animate__animated animate__fadeIn shadow-xl rounded-2xl overflow-hidden">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit(signup)} className="space-y-6">
               <div className="space-y-2 text-center mb-4">

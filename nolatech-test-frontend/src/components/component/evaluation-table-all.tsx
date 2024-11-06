@@ -99,7 +99,7 @@ export function EvaluationsTableAll() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-60"></div>
       </div>
       <div className="relative z-10 p-6">
-        <Card className="w-full shadow-lg rounded-lg bg-white/80 backdrop-blur-lg">
+        <Card className="animate__animated animate__fadeIn w-full shadow-lg rounded-lg bg-white/80 backdrop-blur-lg">
           <CardHeader className="border-b border-gray-200 p-4">
             <CardTitle className="text-2xl font-semibold text-gray-800">
               Employee's Evaluations

@@ -60,7 +60,7 @@ export function EmployeeProfile() {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       ></div>
       <div className="relative z-10 p-8">
-        <div className="container mx-auto flex flex-col md:flex-row gap-6">
+        <div className="animate__animated animate__fadeIn container mx-auto flex flex-col md:flex-row gap-6">
           {/* Left Profile Card */}
           <div className="md:w-1/3">
             <Card className="p-4 shadow-lg">
