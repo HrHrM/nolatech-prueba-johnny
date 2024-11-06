@@ -23,7 +23,7 @@ export const loginUser = async (data: LoginFormData): Promise<any> => {
 
 export const registerUser = async (data: RegisterFormData): Promise<any> => {
     const url: string = `${import.meta.env.VITE_BACKEND_URL}${endpoints.register}`;
-    console.log('URL', url);
+    // console.log('URL', url);
     const res = await fetch(url, {
         method: 'POST',
         headers: {

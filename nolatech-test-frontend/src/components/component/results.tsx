@@ -29,17 +29,16 @@ export function EmployeeSearchAndResults() {
 
   // Solicitar Empleados
   const fetchEmployees = async () => {
-    console.log("### REQUEST EMPLOYEES");
+    // console.log("### REQUEST EMPLOYEES");
     setLoading(true);
     try {
       // Usamos el servicio `service.get` en lugar de `fetch` directamente
       const response = await service.get(`${endpoints.endpoints.employees}`);
       const data = await response.json();
-      console.log("### DATA", data);
+      // console.log("### DATA", data);
 
       // Actualizamos el estado con los empleados y el total
-      setEmployees(data); // Asegurarse de que sea un array
-      console.log("### EMPLEADOS:", employees);
+      setEmployees(data);
     } catch (error) {
       console.error("Error fetching employees:", error);
     } finally {
@@ -75,11 +74,11 @@ export function EmployeeSearchAndResults() {
   };
 
   const exportToExcel = async (employeeID: string, username: string) => {
-    console.log("ID:", employeeID);
+    // console.log("ID:", employeeID);
   
     // Fetch evaluation data
     const evaluationData = await fetchEvaluationData(employeeID);
-    console.log("RESPONSE:", evaluationData);
+    // console.log("RESPONSE:", evaluationData);
   
     // Check if evaluationData has results
     if (

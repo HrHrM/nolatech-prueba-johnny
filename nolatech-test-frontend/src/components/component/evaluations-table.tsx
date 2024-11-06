@@ -30,7 +30,6 @@ export function EvaluationsTable() {
   const [searchParams, setSearchParams] = useSearchParams() as any;
   // const currentPage = parseInt(searchParams.get("page")) || 1;
   let currentID = useSelector((state: RootState) => state.auth.id);
-  console.log("ID", currentID);
 
   const fetchEvaluations = async (page = 1) => {
     setLoading(true);
@@ -38,7 +37,6 @@ export function EvaluationsTable() {
       const url: string = `${endpoints.endpoints.evaluations_employee}${currentID}/`;
       const response = await service.get(`${url}`);
       const data = await response.json();
-      console.log("DATA:", data);
       // Ensure data is an array
       setEvaluationsTotal(Array.isArray(data) ? data : []);
     } catch (error) {

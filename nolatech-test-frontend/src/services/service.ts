@@ -27,7 +27,7 @@ const globalConfig = {
 };
 
 const request = (url: string, options: RequestInit) => {
-    console.log('### REQUEST');
+    // console.log('### REQUEST');
     if (localStorage.getItem('token')) {
         if (typeof window !== 'undefined' && !!globalConfig) {
             const data = localStorage.getItem('token');
@@ -38,7 +38,7 @@ const request = (url: string, options: RequestInit) => {
         }
         options.headers = globalConfig;
     }
-    console.log('FETCH');
+    // console.log('FETCH');
     return fetch(`${SERVER_URL}${url}`, options)
         .then((response) => {
             if (response.status === 401) {
@@ -56,20 +56,20 @@ const request = (url: string, options: RequestInit) => {
 
 export const service = {
     get: (url: string, options?: RequestInit) => {
-        console.log('## GET:', url);
+        // console.log('## GET:', url);
         return request(url, { method: 'GET', ...options })
     },
     post: (url: string, options?: RequestInit) => {
-        console.log('## POST:', url);
+        // console.log('## POST:', url);
 
         return request(url, { method: 'POST', ...options })
     },
     put: (url: string, options?: RequestInit) => {
-        console.log('## PUT:', url);
+        // console.log('## PUT:', url);
         return request(url, { method: 'PUT', ...options })
     },
     delete: (url: string, options?: RequestInit) => {
-        console.log('## DELETE:', url);
+        // console.log('## DELETE:', url);
         return request(url, { method: 'DELETE', ...options })
     },
 };

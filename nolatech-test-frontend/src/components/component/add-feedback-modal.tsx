@@ -14,7 +14,7 @@ const feedbackSchema = z.object({
 });
 
 export function AddFeedbackModal({ isOpen, onClose, evaluation }:any) {
-  console.log({evaluation});
+  // console.log({evaluation});
   const [feedbackData, setFeedbackData] = useState({ feedback: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<any>({});
@@ -45,10 +45,10 @@ export function AddFeedbackModal({ isOpen, onClose, evaluation }:any) {
   };
 
   const saveFeedback = async (feedbackData: { feedback: string }) => {
-    console.log({evaluation});
+    // console.log({evaluation});
     setIsLoading(true);
     const feedbackDataToSave = { evaluationId: evaluation._id, ...feedbackData };
-    console.log({feedbackDataToSave});
+    // console.log({feedbackDataToSave});
     try {
       const response = await service.post('/api/feedback', {
         body: JSON.stringify(feedbackDataToSave),

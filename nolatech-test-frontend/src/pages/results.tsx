@@ -3,7 +3,7 @@ import { EmployeeSearchAndResults } from "@/components/component/results";
 
 
 function ResultsGraphs() {
-  console.log("### ResultsGraphs PAGE");
+  // console.log("### ResultsGraphs PAGE");
   return (
     <div className="flex flex-col h-screen">
       <Header />

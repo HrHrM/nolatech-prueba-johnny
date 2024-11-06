@@ -36,9 +36,9 @@ const authSlice = createSlice({
       localStorage.removeItem('role');
     },
     setID: (state, action: PayloadAction<number>) => {
-      console.log('ACTION ID', action);
+      // console.log('ACTION ID', action);
       state.id = action.payload.toString();
-      console.log('STATE ID', state);
+      // console.log('STATE ID', state);
       // save the id in localStorage
       localStorage.setItem('id', action.payload.toString());
     },
@@ -48,9 +48,9 @@ const authSlice = createSlice({
       localStorage.removeItem('id');
     },
     setName: (state, action: PayloadAction<string>) => {
-      console.log('ACTION NAME', action);
+      // console.log('ACTION NAME', action);
       state.name = action.payload;
-      console.log('STATE NAME', state);
+      // console.log('STATE NAME', state);
 
       // save the name in localStorage
       localStorage.setItem('name', action.payload);

@@ -4,7 +4,7 @@ import Header from "@/components/component/header";
 
 
 function EvaluationsAll() {
-  console.log('### EVALUATIONS PAGE');
+  // console.log('### EVALUATIONS PAGE');
   return (
     <div className='flex flex-col h-screen'>
       <Header />

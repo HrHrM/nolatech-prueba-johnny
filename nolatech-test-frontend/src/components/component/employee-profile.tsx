@@ -37,7 +37,7 @@ export function EmployeeProfile() {
       );
       const data = await response.json();
       setEvaluations(data);
-      console.log("Evaluations:", data);
+      // console.log("Evaluations:", data);
     } catch (error) {
       console.error("Error fetching employee data:", error);
     } finally {

@@ -8,27 +8,23 @@ import { RootState } from "@/redux/store/store";
 
 function Header() {
   const currentRole = useSelector((state: RootState) => state.auth.role);
-  const currentID = useSelector((state: RootState) => state.auth.id || 0);
+  const currentID = useSelector((state: RootState) => state.auth.id);
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    console.log("Responsive menu opened");
+    // console.log("Responsive menu opened");
     setIsMenuOpen(!isMenuOpen);
   };
 
   const openProfile = () => {
-    console.log("CURRENT ID:", currentID);
     navigate(`/profile`);
   };
 
   const handleLogout = () => {
-    // Eliminar token de localStorage
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
-    console.log("LOGOUT STARTED");
+    // Eliminar items de localStorage
+    ['token', 'role', 'id', 'name'].forEach(item => localStorage.removeItem(item));
+    // console.log("LOGOUT STARTED");
     // Redirigir al login
     navigate("/login");
   };

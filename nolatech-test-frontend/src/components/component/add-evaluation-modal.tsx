@@ -40,7 +40,7 @@ export function AddEvaluationModal({
   employee,
   evaluation,
 }: AddEvaluationModalProps) {
-  console.log("Add evaluation");
+  // console.log("Add evaluation");
   const [evaluationData, setEvaluationData] = useState<any>({
     note: evaluation ? evaluation.note : "",
     score: evaluation ? evaluation.score : 0,
@@ -80,7 +80,7 @@ export function AddEvaluationModal({
       employeeId: employee._id,
     };
 
-    console.log("evaluationData:", evaluationData);
+    // console.log("evaluationData:", evaluationData);
 
     try {
       const response = evaluation

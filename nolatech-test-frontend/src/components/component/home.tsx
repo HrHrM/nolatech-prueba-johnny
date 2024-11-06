@@ -41,31 +41,27 @@ export function Home() {
   const [loading, setLoading] = useState(true); // Cargando
   const [isModalOpen, setIsModalOpen] = useState(false); // Mostrar modal
   const [isEvaluationModalOpen, setIsEvaluationModalOpen] = useState(false); // Mostrar Modal de Evaluacion
-  // Función para obtener los empleados desde la API
 
-  console.log("### HOME COMPONENT");
+  // console.log("### HOME COMPONENT");
 
-  // Efecto para realizar la solicitud cuando el componente se monta o cuando se cambia la página o el límite de items
   useEffect(() => {
     fetchEmployees();
   }, [currentPage, itemsPerPage]);
 
   // Solicitar Empleados
   const fetchEmployees = async () => {
-    console.log("### REQUEST EMPLOYEES");
+    // console.log("### REQUEST EMPLOYEES");
     setLoading(true);
 
     try {
       // Usamos el servicio `service.get` en lugar de `fetch` directamente
       const response = await service.get(`${endpoints.endpoints.employees}`);
       const data = await response.json();
-      console.log("### DATA", data);
+      // console.log("### DATA", data);
 
       // Actualizamos el estado con los empleados y el total
       setEmployees(data); // Asegurarse de que sea un array
       setTotalEmployees(data.total || 0); // Asegurarse de que sea un número
-      console.log("### EMPLEADOS:", employees);
-      console.log("### TOTAL EMPLEADOS:", totalEmployees);
     } catch (error) {
       console.error("Error fetching employees:", error);
     } finally {
