@@ -76,7 +76,7 @@ function Header() {
             </Button>
           )}
           <Button variant="header" asChild className="w-full">
-            <Link to="/results">Results</Link>
+            <Link to="/results-graphs">Results</Link>
           </Button>
           <Button variant="header" className="w-full" onClick={() => openProfile()}>
             <User className="inline mr-2" /> Profile
