@@ -118,7 +118,7 @@ export function Home() {
         <main className="flex-1">
           {currentRole && (
             <div className="grid gap-6">
-              <Card className="shadow-lg rounded-lg">
+              <Card className="animate__animated animate__fadeIn shadow-lg rounded-lg">
                 <CardHeader className="p-6 border-b border-gray-200">
                   <CardTitle className="text-2xl font-semibold text-gray-800">
                     Employees

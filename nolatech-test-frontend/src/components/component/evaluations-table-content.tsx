@@ -17,7 +17,7 @@ export function EvaluationsTableContent({ evaluations, openFeedbackModal, openEv
       <TableBody>
         {evaluations.map((evaluation:any, index:number) => (
           <TableRow key={index}>
-            <TableCell>{evaluation.employeeId.username}</TableCell>
+            <TableCell>{evaluation.employeeId?.username || 'Example'}</TableCell>
             <TableCell>{evaluation.score}</TableCell>
             <TableCell>
               <div className="relative">

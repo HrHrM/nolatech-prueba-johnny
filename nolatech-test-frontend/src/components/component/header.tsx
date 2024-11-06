@@ -72,7 +72,7 @@ function Header() {
           </Button>
           {(currentRole === "Admin" || currentRole === "Manager") && (
             <Button variant="header" asChild className="w-full">
-              <Link to="/all-evaluations">All Evaluations</Link>
+              <Link to="/general-evaluations">All Evaluations</Link>
             </Button>
           )}
           <Button variant="header" asChild className="w-full">
